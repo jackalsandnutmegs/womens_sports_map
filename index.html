@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Football & Rugby Map - UK & Ireland</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+        body { 
+            margin: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; 
+            background: #f8f9fa;
+        }
+        .header {
+            background: linear-gradient(135deg, #4CAF50 0%, #FF6B35 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .controls { 
+            padding: 20px; 
+            background: white; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .filter-group { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+        }
+        
+        .filter-group label { 
+            font-weight: 600; 
+            color: #333;
+        }
+        
+        button { 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 25px; 
+            cursor: pointer; 
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .btn-football { background: #4CAF50; color: white; }
+        .btn-rugby { background: #FF6B35; color: white; }
+        .btn-all { background: #2196F3; color: white; }
+        .btn-active { 
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            transform: scale(1.05);
+        }
+        
+        select { 
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+            font-size: 14px;
+            background: white;
+        }
+        
+        #map { 
+            height: 70vh; 
+            width: 100%; 
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .legend { 
+            position: absolute; 
+            top: 20px; 
+            right: 20px; 
+            background: rgba(255,255,255,0.95); 
+            padding: 15px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .legend h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 8px 0;
+        }
+        
+        .stats {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .stats-item {
+            display: inline-block;
+            margin: 0 20px;
+            padding: 10px;
+        }
+        
+        .stats-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        .stats-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            #map {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>⚽ Women's Football & Rugby Map 🏉</h1>
+        <p>Discover teams across UK & Ireland • Support grassroots women's sport</p>
+    </div>
+    
+    <div class="controls">
+        <div class="filter-group">
+            <label>Show:</label>
+            <button id="btn-all" class="btn-all btn-active" onclick="showAll()">All Teams</button>
+            <button id="btn-football" class="btn-football" onclick="showSport('football')">⚽ Football</button>
+            <button id="btn-rugby" class="btn-rugby" onclick="showSport('rugby')">🏉 Rugby</button>
+        </div>
+        
+        <div class="filter-group">
+            <label>Division:</label>
+            <select id="divisionFilter" onchange="filterByDivision()">
+                <option value="all">All Divisions</option>
+                <option value="tier1">Tier 1 (WSL/PWR)</option>
+                <option value="tier2">Tier 2</option>
+                <option value="tier3">Tier 3+</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="map"></div>
+    
+    <div class="legend">
+        <h4>🗺️ Legend</h4>
+        <div class="legend-item">
+            <div style="width: 20px; height: 20px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px;">⚽</div>
+            <span>Football Teams</span>
+        </div>
+        <div class="legend-item">
+            <div style="width: 20px; height: 20px; background: #FF6B35; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px;">🏉</div>
+            <span>Rugby Teams</span>
+        </div>
+        <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #eee;">
+            <strong>Teams visible:</strong> <span id="teamCount">0</span>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stats-item">
+            <div class="stats-number" id="footballCount">0</div>
+            <div class="stats-label">Football Teams</div>
+        </div>
+        <div class="stats-item">
+            <div class="stats-number" id="rugbyCount">0</div>
+            <div class="stats-label">Rugby Teams</div>
+        </div>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map centered on UK
+        const map = L.map('map').setView([54.5, -3.0], 6);
+
+        // Add OpenStreetMap tiles with attribution
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Made with ❤️ for women\'s sport'
+        }).addTo(map);
+
+        // Layer groups for filtering
+        const footballLayer = L.layerGroup().addTo(map);
+        const rugbyLayer = L.layerGroup().addTo(map);
+        let allMarkers = [];
+
+        // YOUR TEAM DATA GOES HERE
+        // Replace this sample data with your real teams
+        const teams = [
+            {
+                name: "Arsenal Women",
+                sport: "football",
+                tier: "tier1",
+                lat: 51.55572979999999,
+                lng: -0.1083118,
+                division: "WSL",
+                ground: "Emirates Stadium",
+                social: "@ArsenalWFC",
+                streaming: "Arsenal.com",
+                founded: "1987",
+                region: "North London"
+            },
+            {
+                name: "Manchester City Women",
+                sport: "football",
+                tier: "tier1",
+                lat: 53.48096770000001,
+                lng: -2.1926539,
+                division: "WSL",
+                ground: "Joie Stadium",
+                social: "@ManCityWomen",
+                streaming: "City+",
+                founded: "1988",
+                region: "Manchester"
+            },
+            {
+                name: "Saracens Women",
+                sport: "rugby",
+                tier: "tier1",
+                lat: 51.6543,
+                lng: -0.3457,
+                division: "PWR",
+                ground: "StoneX Stadium",
+                social: "@SaracensWomen",
+                streaming: "Saracens TV",
+                founded: "1989",
+                region: "North London"
+            },
+            // ADD YOUR TEAMS HERE
+        ];
+
+        // Custom marker styles
+        const footballIcon = L.divIcon({
+            html: '<div style="background: #4CAF50; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 2px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">⚽</div>',
+            iconSize: [24, 24],
+            className: 'custom-div-icon'
+        });
+
+        const rugbyIcon = L.divIcon({
+            html: '<div style="background: #FF6B35; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 2px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">🏉</div>',
+            iconSize: [24, 24],
+            className: 'custom-div-icon'
+        });
+
+        // Add teams to map
+        teams.forEach(team => {
+            const icon = team.sport === 'football' ? footballIcon : rugbyIcon;
+            const layer = team.sport === 'football' ? footballLayer : rugbyLayer;
+            
+            const popupContent = `
+                <div style="min-width: 250px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;">
+                    <div style="background: ${team.sport === 'football' ? '#4CAF50' : '#FF6B35'}; color: white; padding: 15px; margin: -10px -10px 15px -10px; border-radius: 8px 8px 0 0;">
+                        <h3 style="margin: 0; font-size: 1.2rem;">${team.name}</h3>
+                        <div style="opacity: 0.9; margin-top: 5px;">${team.sport === 'football' ? '⚽' : '🏉'} ${team.division}</div>
+                    </div>
+                    <div style="line-height: 1.6;">
+                        <p style="margin: 8px 0;"><strong>🏟️ Ground:</strong> ${team.ground}</p>
+                        <p style="margin: 8px 0;"><strong>📍 Region:</strong> ${team.region}</p>
+                        <p style="margin: 8px 0;"><strong>📅 Founded:</strong> ${team.founded}</p>
+                        <p style="margin: 8px 0;"><strong>📱 Social:</strong> ${team.social}</p>
+                        <p style="margin: 8px 0;"><strong>📺 Watch:</strong> ${team.streaming}</p>
+                    </div>
+                    <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #eee; font-size: 0.9rem; color: #666; text-align: center;">
+                        Click to plan your route to this ground!
+                    </div>
+                </div>
+            `;
+            
+            const marker = L.marker([team.lat, team.lng], { icon })
+                .bindPopup(popupContent, { maxWidth: 300 })
+                .addTo(layer);
+            
+            // Store team data on marker for filtering
+            marker.teamData = team;
+            allMarkers.push(marker);
+        });
+
+        // Update counters and stats
+        function updateStats() {
+            let visibleCount = 0;
+            let footballCount = 0;
+            let rugbyCount = 0;
+            
+            allMarkers.forEach(marker => {
+                if (map.hasLayer(marker)) {
+                    visibleCount++;
+                    if (marker.teamData.sport === 'football') footballCount++;
+                    else rugbyCount++;
+                }
+            });
+            
+            document.getElementById('teamCount').textContent = visibleCount;
+            document.getElementById('footballCount').textContent = footballCount;
+            document.getElementById('rugbyCount').textContent = rugbyCount;
+        }
+
+        // Filter functions
+        function showAll() {
+            footballLayer.addTo(map);
+            rugbyLayer.addTo(map);
+            updateActiveButton('btn-all');
+            updateStats();
+        }
+
+        function showSport(sport) {
+            if (sport === 'football') {
+                map.removeLayer(rugbyLayer);
+                footballLayer.addTo(map);
+                updateActiveButton('btn-football');
+            } else if (sport === 'rugby') {
+                map.removeLayer(footballLayer);
+                rugbyLayer.addTo(map);
+                updateActiveButton('btn-rugby');
+            }
+            updateStats();
+        }
+
+        function updateActiveButton(activeId) {
+            ['btn-all', 'btn-football', 'btn-rugby'].forEach(id => {
+                document.getElementById(id).classList.remove('btn-active');
+            });
+            document.getElementById(activeId).classList.add('btn-active');
+        }
+
+        function filterByDivision() {
+            const selectedTier = document.getElementById('divisionFilter').value;
+            
+            // Remove all markers first
+            allMarkers.forEach(marker => marker.remove());
+            
+            // Add back markers that match the filter
+            allMarkers.forEach(marker => {
+                const team = marker.teamData;
+                if (selectedTier === 'all' || team.tier === selectedTier) {
+                    const currentLayer = team.sport === 'football' ? footballLayer : rugbyLayer;
+                    if (map.hasLayer(currentLayer)) {
+                        marker.addTo(currentLayer);
+                    }
+                }
+            });
+            
+            updateStats();
+        }
+
+        // Initialize stats
+        updateStats();
+
+        // Fit map to show all markers with padding
+        if (allMarkers.length > 0) {
+            setTimeout(() => {
+                const group = new L.featureGroup(allMarkers);
+                map.fitBounds(group.getBounds().pad(0.1));
+            }, 100);
+        }
+
+        // Add click handler for coordinates (development helper)
+        map.on('click', function(e) {
+            console.log(`Coordinates: ${e.latlng.lat.toFixed(4)}, ${e.latlng.lng.toFixed(4)}`);
+        });
+    </script>
+</body>
+</html>
