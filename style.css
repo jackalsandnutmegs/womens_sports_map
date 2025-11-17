@@ -1,0 +1,198 @@
+/* Basic reset-ish */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0b1020;
+  color: #f5f5f5;
+}
+
+/* Layout */
+
+.page-header {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: #c7c9d5;
+  font-size: 0.95rem;
+}
+
+.layout {
+  display: flex;
+  min-height: calc(100vh - 140px);
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 320px;
+  max-width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #070b16;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0.75rem;
+  padding: 0.9rem 0.9rem 1rem;
+}
+
+.panel.small {
+  font-size: 0.9rem;
+}
+
+.panel h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+}
+
+/* Filters */
+
+.filter-group {
+  margin-bottom: 0.75rem;
+}
+
+.filter-label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+  color: #d1d4e0;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.filter-btn {
+  flex: 1;
+  border: none;
+  padding: 0.4rem 0.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f5f5f5;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #ff4c8b;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+#division-filter {
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(6, 10, 22, 0.95);
+  color: #f5f5f5;
+  font-size: 0.85rem;
+}
+
+/* Stats */
+
+.stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.stats-list li {
+  margin-bottom: 0.25rem;
+}
+
+/* Map section */
+
+.map-section {
+  flex: 1;
+  min-width: 0;
+  padding: 1rem 1rem 1.5rem;
+}
+
+#map {
+  width: 100%;
+  height: calc(100vh - 180px);
+  border-radius: 0.9rem;
+  overflow: hidden;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+}
+
+/* Attribution/footer */
+
+.page-footer {
+  padding: 0.7rem 1.5rem 0.9rem;
+  font-size: 0.8rem;
+  color: #b5b8c5;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.page-footer a {
+  color: #ff4c8b;
+}
+
+/* Leaflet popups can be styled too if you want */
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0.75rem;
+}
+
+.leaflet-popup-content {
+  font-size: 0.9rem;
+}
+
+.popup-header {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.popup-sport-football {
+  color: #ffdf5b;
+}
+
+.popup-sport-rugby {
+  color: #7dffb8;
+}
+
+.popup-division {
+  font-size: 0.8rem;
+  color: #c7c9d5;
+  margin-bottom: 0.4rem;
+}
+
+/* Responsive tweaks */
+
+@media (max-width: 800px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  #map {
+    height: 60vh;
+  }
+}
