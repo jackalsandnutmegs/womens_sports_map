@@ -1,4 +1,5 @@
 // main.js
+// REMEMBER: markers live in markerLayer so we can later swap it for a cluster layer.
 
 // --- Map setup ---
 
@@ -9,6 +10,9 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution:
     '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+// 🔹 Add this line for future-proofing (cluster-ready layer)
+const markerLayer = L.layerGroup().addTo(map); // Later: const markerLayer = L.markerClusterGroup().addTo(map);
 
 // --- Icons ---
 
@@ -53,7 +57,8 @@ let activeTier = "all";  // "all" | "tier1" | "tier2" | ...
 teams.forEach((team) => {
   const icon = team.sport === "rugby" ? rugbyIcon : footballIcon;
 
-  const marker = L.marker([team.lat, team.lng], { icon }).addTo(map);
+  // add marker to markerLayer (not directly to map)
+  const marker = L.marker([team.lat, team.lng], { icon }).addTo(markerLayer);
 
   marker.teamData = team; // attach the data to the marker for filtering/stats
 
@@ -61,37 +66,64 @@ teams.forEach((team) => {
     team.sport === "rugby" ? "popup-sport-rugby" : "popup-sport-football";
 
   const popupHtml = `
-    <div class="popup">
-      <div class="popup-header ${sportClass}">
-        ${team.name}
+      <div class="popup">
+        <div class="popup-header ${sportClass}">
+          ${team.teamName || team.name || "Unknown team"}
+        </div>
+
+        <div class="popup-division">
+          ${team.division ? team.division : ""}
+        </div>
+
+        <div style="margin: 0.15rem 0 0.35rem; font-size: 0.8rem; opacity: 0.85;">
+          ${team.country || ""}${team.country && team.regionName ? " · " : ""}${team.regionName || ""}
+        </div>
+
+        <div><strong>Ground:</strong> ${team.groundName || "TBC"}</div>
+        ${
+          team.groundRole
+            ? `<div style="font-size:0.8rem; margin-top:0.15rem; opacity:0.85;">
+                 Role: ${team.groundRole === "primary" ? "Primary ground" : "Secondary venue"}
+               </div>`
+            : ""
+        }
+
+        ${
+          team.notes
+            ? `<div style="margin-top:0.5rem;">${team.notes}</div>`
+            : ""
+        }
+
+        <div style="margin-top:0.5rem; font-size:0.8rem; opacity:0.8;">
+          Sport: ${team.sport === "football" ? "Football" : "Rugby"} · Tier: ${team.tier || "N/A"}
+        </div>
+
+        ${
+          team.website
+            ? `<div style="margin-top:0.4rem; font-size:0.85rem;">
+                 <strong>Website:</strong>
+                 <a href="${team.website}" target="_blank" rel="noopener">Club site</a>
+               </div>`
+            : ""
+        }
+        ${
+          team.instagram
+            ? `<div style="font-size:0.85rem;">
+                 <strong>Instagram:</strong>
+                 <a href="${team.instagram}" target="_blank" rel="noopener">${team.instagram}</a>
+               </div>`
+            : ""
+        }
+        ${
+          team.twitter
+            ? `<div style="font-size:0.85rem;">
+                 <strong>X (Twitter):</strong>
+                 <a href="${team.twitter}" target="_blank" rel="noopener">${team.twitter}</a>
+               </div>`
+            : ""
+        }
       </div>
-      <div class="popup-division">
-        ${team.division ? team.division : ""}
-      </div>
-      <div><strong>Ground:</strong> ${team.ground || "TBC"}</div>
-      <div><strong>Region:</strong> ${team.region || "TBC"}</div>
-      ${
-        team.founded
-          ? `<div><strong>Founded:</strong> ${team.founded}</div>`
-          : ""
-      }
-      ${
-        team.social
-          ? `<div><strong>Social:</strong> ${team.social}</div>`
-          : ""
-      }
-      ${
-        team.streaming
-          ? `<div><strong>Streaming:</strong> ${team.streaming}</div>`
-          : ""
-      }
-      <div style="margin-top:0.4rem; font-size:0.8rem; opacity:0.8;">
-        Sport: ${team.sport === "football" ? "Football" : "Rugby"} · Tier: ${
-    team.tier || "N/A"
-  }
-      </div>
-    </div>
-  `;
+    `;
 
   marker.bindPopup(popupHtml);
   markers.push(marker);
@@ -112,12 +144,12 @@ function applyFilters() {
     const shouldShow = sportMatch && tierMatch;
 
     if (shouldShow) {
-      if (!map.hasLayer(marker)) {
-        marker.addTo(map);
+      if (!markerLayer.hasLayer(marker)) {
+        markerLayer.addLayer(marker);
       }
     } else {
-      if (map.hasLayer(marker)) {
-        map.removeLayer(marker);
+      if (markerLayer.hasLayer(marker)) {
+        markerLayer.removeLayer(marker);
       }
     }
   });
@@ -131,7 +163,7 @@ function updateStats() {
   let rugbyCount = 0;
 
   markers.forEach((marker) => {
-    if (map.hasLayer(marker)) {
+    if (markerLayer.hasLayer(marker)) {
       total++;
       if (marker.teamData.sport === "football") footballCount++;
       if (marker.teamData.sport === "rugby") rugbyCount++;
