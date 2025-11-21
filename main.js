@@ -50,8 +50,14 @@ document.head.appendChild(style);
 
 const markers = []; // keep references to all markers so we can filter them
 
-let activeSport = "all"; // "all" | "football" | "rugby"
-let activeTier = "all";  // "all" | "tier1" | "tier2" | ...
+const filterState = {
+  sport: "all",       // "all" | "football" | "rugby"
+  tier: "all",        // "all" | "tier1" | "tier2"...
+  region: "all",      // future: "all" | regionCode
+  primaryOnly: false, // future: true/false
+  search: ""          // future: free text
+};
+
 
 // Create markers from teams array
 teams.forEach((team) => {
@@ -121,6 +127,16 @@ teams.forEach((team) => {
                  <a href="${team.twitter}" target="_blank" rel="noopener">${team.twitter}</a>
                </div>`
             : ""
+         }
+        ${
+          team.streaming
+            ? `<div><strong>Streaming:</strong> ${team.streaming}</div>`
+            : ""
+        }
+        ${
+          team.otherSocials
+            ? `<div style="margin-top:0.25rem; font-size:0.8rem;">${team.otherSocials}</div>`
+            : ""
         }
       </div>
     `;
@@ -130,18 +146,34 @@ teams.forEach((team) => {
 });
 
 // --- Filtering & stats ---
+// I need this later: filterState.region = regionSelect.value; // "all" or a regionCode and <input id="search-input"> and const searchInput = document.getElementById("search-input");searchInput.addEventListener("input", () => {  filterState.search = searchInput.value;  applyFilters();});
 
 function applyFilters() {
   markers.forEach((marker) => {
-    const t = marker.teamData;
-
     const sportMatch =
-      activeSport === "all" || t.sport === activeSport;
+      filterState.sport === "all" || t.sport === filterState.sport;
 
     const tierMatch =
-      activeTier === "all" || t.tier === activeTier;
+      filterState.tier === "all" || t.tier === filterState.tier;
+      
+    const regionMatch =
+      filterState.region === "all" ||
+      t.regionCode === filterState.region ||
+      t.regionName === filterState.region; // lets you use either
 
-    const shouldShow = sportMatch && tierMatch;
+    const roleMatch =
+      !filterState.primaryOnly || t.groundRole === "primary";
+      
+    const q = filterState.search.trim().toLowerCase();
+
+    const searchMatch =
+      !q ||
+      (t.teamName && t.teamName.toLowerCase().includes(q)) ||
+      (t.club && t.club.toLowerCase().includes(q)) ||
+      (t.groundName && t.groundName.toLowerCase().includes(q)) ||
+      (t.regionName && t.regionName.toLowerCase().includes(q));
+
+    const shouldShow = sportMatch && tierMatch && roleMatch && regionMatch && searchMatch;
 
     if (shouldShow) {
       if (!markerLayer.hasLayer(marker)) {
@@ -158,22 +190,39 @@ function applyFilters() {
 }
 
 function updateStats() {
-  let total = 0;
-  let footballCount = 0;
-  let rugbyCount = 0;
+  // Use sets so each club is only counted once
+  const totalClubs = new Set();
+  const footballClubs = new Set();
+  const rugbyClubs = new Set();
 
   markers.forEach((marker) => {
-    if (markerLayer.hasLayer(marker)) {
-      total++;
-      if (marker.teamData.sport === "football") footballCount++;
-      if (marker.teamData.sport === "rugby") rugbyCount++;
+    const t = marker.teamData;
+
+    // Only consider markers that are currently visible
+    if (!markerLayer.hasLayer(marker)) return;
+
+    // Only count primary grounds (or treat missing as primary if you want)
+    const role = t.groundRole || "primary";
+    if (role !== "primary") return;
+
+    // Decide what we use as the "club key"
+    const clubKey = t.club || t.teamName || t.name;
+    if (!clubKey) return;
+
+    totalClubs.add(clubKey);
+
+    if (t.sport === "football") {
+      footballClubs.add(clubKey);
+    } else if (t.sport === "rugby") {
+      rugbyClubs.add(clubKey);
     }
   });
 
-  document.getElementById("stats-total").textContent = total;
-  document.getElementById("stats-football").textContent = footballCount;
-  document.getElementById("stats-rugby").textContent = rugbyCount;
+  document.getElementById("stats-total").textContent = totalClubs.size;
+  document.getElementById("stats-football").textContent = footballClubs.size;
+  document.getElementById("stats-rugby").textContent = rugbyClubs.size;
 }
+
 
 // --- UI wiring ---
 
@@ -181,7 +230,7 @@ const sportButtons = document.querySelectorAll(".filter-btn");
 sportButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const newSport = btn.getAttribute("data-sport"); // all | football | rugby
-    activeSport = newSport;
+    filterState.sport = newSport;
 
     // Toggle active class
     sportButtons.forEach((b) => b.classList.remove("active"));
@@ -193,9 +242,18 @@ sportButtons.forEach((btn) => {
 
 const divisionSelect = document.getElementById("division-filter");
 divisionSelect.addEventListener("change", () => {
-  activeTier = divisionSelect.value; // "all" or "tierX"
+  filterState.tier = divisionSelect.value; // "all" or "tierX"
   applyFilters();
 });
+
+const primaryCheckbox = document.getElementById("primary-only-checkbox");
+if (primaryCheckbox) {
+  primaryCheckbox.addEventListener("change", () => {
+    filterState.primaryOnly = primaryCheckbox.checked;
+    applyFilters();
+  });
+}
+
 
 // Initial stats
 updateStats();
