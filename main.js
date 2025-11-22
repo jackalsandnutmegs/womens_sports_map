@@ -52,7 +52,7 @@ const markers = []; // keep references to all markers so we can filter them
 
 const filterState = {
   sport: "all",       // "all" | "football" | "rugby"
-  code: "all"         // "all" | "union"    | "league"
+  code: "all",         // "all" | "union"    | "league"
   tier: "all",        // "all" | "tier1" | "tier2"...
   region: "all",      // future: "all" | regionCode
   primaryOnly: false, // future: true/false
