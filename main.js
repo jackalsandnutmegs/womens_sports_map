@@ -52,6 +52,7 @@ const markers = []; // keep references to all markers so we can filter them
 
 const filterState = {
   sport: "all",       // "all" | "football" | "rugby"
+  code: "all"         // "all" | "union"    | "league"
   tier: "all",        // "all" | "tier1" | "tier2"...
   region: "all",      // future: "all" | regionCode
   primaryOnly: false, // future: true/false
@@ -70,6 +71,11 @@ teams.forEach((team) => {
 
   const sportClass =
     team.sport === "rugby" ? "popup-sport-rugby" : "popup-sport-football";
+
+  const sportLabel =
+    team.sport === "rugby"
+      ? (team.code === "league" ? "Rugby League" : "Rugby Union")
+      : "Football";
 
   const popupHtml = `
       <div class="popup">
@@ -101,7 +107,7 @@ teams.forEach((team) => {
         }
 
         <div style="margin-top:0.5rem; font-size:0.8rem; opacity:0.8;">
-          Sport: ${team.sport === "football" ? "Football" : "Rugby"} · Tier: ${team.tier || "N/A"}
+          Sport: ${sportLabel} · Tier: ${team.tier || "N/A"}
         </div>
 
         ${
@@ -126,7 +132,6 @@ teams.forEach((team) => {
                  <strong>X (Twitter):</strong>
                  <a href="${team.twitter}" target="_blank" rel="noopener">${team.twitter}</a>
                </div>`
-            : ""
          }
         ${
           team.streaming
@@ -145,13 +150,20 @@ teams.forEach((team) => {
   markers.push(marker);
 });
 
+
 // --- Filtering & stats ---
 // I need this later: filterState.region = regionSelect.value; // "all" or a regionCode and <input id="search-input"> and const searchInput = document.getElementById("search-input");searchInput.addEventListener("input", () => {  filterState.search = searchInput.value;  applyFilters();});
 
 function applyFilters() {
   markers.forEach((marker) => {
+    const t = marker.teamData;
     const sportMatch =
       filterState.sport === "all" || t.sport === filterState.sport;
+      
+    const codeMatch =
+      filterState.code === "all" ||                       // no extra filter
+      t.sport !== "rugby" ||                              // only restrict rugby teams
+      (t.code && t.code === filterState.code);            // union/league match
 
     const tierMatch =
       filterState.tier === "all" || t.tier === filterState.tier;
@@ -173,7 +185,7 @@ function applyFilters() {
       (t.groundName && t.groundName.toLowerCase().includes(q)) ||
       (t.regionName && t.regionName.toLowerCase().includes(q));
 
-    const shouldShow = sportMatch && tierMatch && roleMatch && regionMatch && searchMatch;
+    const shouldShow = sportMatch && tierMatch && roleMatch && regionMatch && searchMatch && codeMatch;
 
     if (shouldShow) {
       if (!markerLayer.hasLayer(marker)) {
@@ -236,6 +248,19 @@ sportButtons.forEach((btn) => {
     sportButtons.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
 
+    applyFilters();
+  });
+});
+
+const codeButtons = document.querySelectorAll(".code-filter");
+codeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Visual active state
+    codeButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // Update filter state and reapply filters
+    filterState.code = btn.dataset.code || "all"; // "all", "union", "league"
     applyFilters();
   });
 });
