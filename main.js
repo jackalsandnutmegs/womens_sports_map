@@ -132,6 +132,7 @@ teams.forEach((team) => {
                  <strong>X (Twitter):</strong>
                  <a href="${team.twitter}" target="_blank" rel="noopener">${team.twitter}</a>
                </div>`
+            : ""
          }
         ${
           team.streaming
