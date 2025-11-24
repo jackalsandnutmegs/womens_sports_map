@@ -153,7 +153,6 @@ teams.forEach((team) => {
 
 
 // --- Filtering & stats ---
-// I need this later: filterState.region = regionSelect.value; // "all" or a regionCode and <input id="search-input"> and const searchInput = document.getElementById("search-input");searchInput.addEventListener("input", () => {  filterState.search = searchInput.value;  applyFilters();});
 
 function applyFilters() {
   markers.forEach((marker) => {
@@ -202,6 +201,8 @@ function applyFilters() {
   updateStats();
 }
 
+// --- Region dropdown: populate options + wire change handler ---
+
 const regionSelect = document.getElementById("region-filter");
 if (regionSelect) {
   const regions = new Map();
@@ -222,7 +223,13 @@ if (regionSelect) {
       opt.textContent = name;
       regionSelect.appendChild(opt);
     });
+
+  regionSelect.addEventListener("change", () => {
+    filterState.region = regionSelect.value; // "all" or a regionCode
+    applyFilters();
+  });
 }
+
 
 function updateStats() {
   // Use sets so each club is only counted once
@@ -298,14 +305,6 @@ const primaryCheckbox = document.getElementById("primary-only-checkbox");
 if (primaryCheckbox) {
   primaryCheckbox.addEventListener("change", () => {
     filterState.primaryOnly = primaryCheckbox.checked;
-    applyFilters();
-  });
-}
-
-const regionSelect = document.getElementById("region-filter");
-if (regionSelect) {
-  regionSelect.addEventListener("change", () => {
-    filterState.region = regionSelect.value; // "all" or a regionCode
     applyFilters();
   });
 }
