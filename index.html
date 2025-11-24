@@ -62,8 +62,30 @@
             Show primary grounds only
           </label>
         </div>
+        
+        <div class="filter-group">
+          <label class="filter-label" for="region-filter">Region</label>
+          <select id="region-filter">
+            <option value="all">All regions</option>
+            <!-- Options will be added dynamically from JS -->
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label" for="search-input">Search</label>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Club, team or ground…"
+            autocomplete="off"
+          />
+        </div>
 
       </div>
+      
+
+
+
       
 
       <div class="panel">

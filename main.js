@@ -202,6 +202,28 @@ function applyFilters() {
   updateStats();
 }
 
+const regionSelect = document.getElementById("region-filter");
+if (regionSelect) {
+  const regions = new Map();
+
+  teams.forEach((team) => {
+    if (team.regionCode && team.regionName) {
+      if (!regions.has(team.regionCode)) {
+        regions.set(team.regionCode, team.regionName);
+      }
+    }
+  });
+
+  Array.from(regions.entries())
+    .sort((a, b) => a[1].localeCompare(b[1])) // sort by regionName
+    .forEach(([code, name]) => {
+      const opt = document.createElement("option");
+      opt.value = code;
+      opt.textContent = name;
+      regionSelect.appendChild(opt);
+    });
+}
+
 function updateStats() {
   // Use sets so each club is only counted once
   const totalClubs = new Set();
@@ -279,6 +301,23 @@ if (primaryCheckbox) {
     applyFilters();
   });
 }
+
+const regionSelect = document.getElementById("region-filter");
+if (regionSelect) {
+  regionSelect.addEventListener("change", () => {
+    filterState.region = regionSelect.value; // "all" or a regionCode
+    applyFilters();
+  });
+}
+
+const searchInput = document.getElementById("search-input");
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    filterState.search = searchInput.value;
+    applyFilters();
+  });
+}
+
 
 
 // Initial stats
