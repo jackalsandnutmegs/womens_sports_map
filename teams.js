@@ -4,7 +4,7 @@
 
 const teams = [
   {
-    "id": null,
+    "id": "ARS-EN-EM-NE2U",
     "club": "Arsenal",
     "teamName": "Arsenal WFC",
     "sport": "football",
@@ -12,8 +12,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.5557298,
     "lng": -0.1083118,
     "groundName": "Emirates Stadium",
@@ -27,7 +27,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "ARS-EN-BO-WXM7",
     "club": "Arsenal",
     "teamName": "Arsenal WFC",
     "sport": "football",
@@ -35,8 +35,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-EE",
+    "regionName": "East of England",
     "lat": 51.6621617,
     "lng": -0.2712835,
     "groundName": "Borehamwood Football Club",
@@ -50,7 +50,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "AST-EN-VI-CCK6",
     "club": "Aston Villa",
     "teamName": "Aston Villa WFC",
     "sport": "football",
@@ -58,8 +58,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-WM",
+    "regionName": "West Midlands",
     "lat": 52.5091117,
     "lng": -1.8847828,
     "groundName": "Villa Park",
@@ -73,7 +73,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "AST-EN-BE-YAZJ",
     "club": "Aston Villa",
     "teamName": "Aston Villa WFC",
     "sport": "football",
@@ -81,8 +81,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-WM",
+    "regionName": "West Midlands",
     "lat": 52.5657831,
     "lng": -1.9906229,
     "groundName": "Bescot Stadium",
@@ -96,7 +96,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "BRI-EN-BR-W6CH",
     "club": "Brighton & Hove Albion",
     "teamName": "Brighton & Hove Albion WFC",
     "sport": "football",
@@ -104,8 +104,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-SE",
+    "regionName": "South East",
     "lat": 51.099807,
     "lng": -0.1948115,
     "groundName": "Broadfield Stadium",
@@ -119,7 +119,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "BRI-EN-AM-TM0E",
     "club": "Brighton & Hove Albion",
     "teamName": "Brighton & Hove Albion WFC",
     "sport": "football",
@@ -127,8 +127,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-SE",
+    "regionName": "South East",
     "lat": 50.8615724,
     "lng": -0.0836618,
     "groundName": "American Express Stadium",
@@ -142,7 +142,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "CHE-EN-KI-QXUI",
     "club": "Chelsea",
     "teamName": "Chelsea WFC",
     "sport": "football",
@@ -150,8 +150,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.405267,
     "lng": -0.2818903,
     "groundName": "Kingsmeadow",
@@ -165,7 +165,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "CHE-EN-ST-9AI3",
     "club": "Chelsea",
     "teamName": "Chelsea WFC",
     "sport": "football",
@@ -173,8 +173,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.4817241,
     "lng": -0.1909471,
     "groundName": "Stamford Bridge",
@@ -188,7 +188,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "CRY-EN-VB-EI18",
     "club": "Crystal Palace",
     "teamName": "Crystal Palace WFC",
     "sport": "football",
@@ -196,8 +196,8 @@ const teams = [
     "tier": "tier2",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.3677754,
     "lng": -0.2042941,
     "groundName": "VBS Community Stadium",
@@ -211,7 +211,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "CRY-EN-SE-7MBF",
     "club": "Crystal Palace",
     "teamName": "Crystal Palace WFC",
     "sport": "football",
@@ -219,8 +219,8 @@ const teams = [
     "tier": "tier2",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.3981495,
     "lng": -0.0857056,
     "groundName": "Selhurst Park",
@@ -234,7 +234,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "EVE-EN-WA-U3FZ",
     "club": "Everton",
     "teamName": "Everton WFC",
     "sport": "football",
@@ -242,8 +242,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.445356,
     "lng": -2.9536821,
     "groundName": "Walton Hall Park",
@@ -257,7 +257,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "EVE-EN-GO-BUZM",
     "club": "Everton",
     "teamName": "Everton WFC",
     "sport": "football",
@@ -265,8 +265,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.4388437,
     "lng": -2.9662821,
     "groundName": "Goodison Park",
@@ -280,7 +280,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "LEI-EN-KI-597M",
     "club": "Leicester City",
     "teamName": "Leicester City WFC",
     "sport": "football",
@@ -288,8 +288,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-EM",
+    "regionName": "East Midlands",
     "lat": 52.6203662,
     "lng": -1.1421895,
     "groundName": "King Power Stadium",
@@ -303,7 +303,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "LEI-EN-PI-XHHW",
     "club": "Leicester City",
     "teamName": "Leicester City WFC",
     "sport": "football",
@@ -311,8 +311,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-WM",
+    "regionName": "West Midlands",
     "lat": 52.8215623,
     "lng": -1.627267,
     "groundName": "Pirelli Stadium Princess Way",
@@ -326,7 +326,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "LIV-EN-TO-2R9Y",
     "club": "Liverpool",
     "teamName": "Liverpool WFC",
     "sport": "football",
@@ -334,8 +334,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.4474676,
     "lng": -2.7261145,
     "groundName": "Totally Wicked Stadium",
@@ -349,7 +349,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "LIV-EN-AN-88SD",
     "club": "Liverpool",
     "teamName": "Liverpool WFC",
     "sport": "football",
@@ -357,8 +357,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.4308435,
     "lng": -2.9608174,
     "groundName": "Anfield",
@@ -372,7 +372,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "MAN-EN-JO-BWKJ",
     "club": "Manchester City",
     "teamName": "Manchester City WFC",
     "sport": "football",
@@ -380,8 +380,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.4809677,
     "lng": -2.1926539,
     "groundName": "Joie Stadium",
@@ -395,7 +395,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "MAN-EN-ET-4NS8",
     "club": "Manchester City",
     "teamName": "Manchester City WFC",
     "sport": "football",
@@ -403,8 +403,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.4831634,
     "lng": -2.2003736,
     "groundName": "Etihad Stadium",
@@ -418,7 +418,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "MAN-EN-LE-UNKG",
     "club": "Manchester United",
     "teamName": "Manchester United WFC",
     "sport": "football",
@@ -426,8 +426,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.4899532,
     "lng": -2.5309793,
     "groundName": "Leigh Sports Village",
@@ -441,7 +441,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "MAN-EN-OL-JMMB",
     "club": "Manchester United",
     "teamName": "Manchester United WFC",
     "sport": "football",
@@ -449,8 +449,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.4630589,
     "lng": -2.2913401,
     "groundName": "Old Trafford",
@@ -464,7 +464,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "TOT-EN-BR-EQ0T",
     "club": "Tottenham Hotspur",
     "teamName": "Tottenham Hotspur WFC",
     "sport": "football",
@@ -472,8 +472,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.5601583,
     "lng": -0.0126087,
     "groundName": "Brisbane Lane",
@@ -487,7 +487,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "TOT-EN-TO-TYO5",
     "club": "Tottenham Hotspurs",
     "teamName": "Tottenham Hotspurs WFC",
     "sport": "football",
@@ -495,8 +495,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.6042205,
     "lng": -0.0662231,
     "groundName": "Tottenham Hotspur Stadium",
@@ -510,7 +510,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "WES-EN-CH-LK96",
     "club": "West Ham Women",
     "teamName": "West Ham WFC",
     "sport": "football",
@@ -518,8 +518,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.5473022,
     "lng": 0.1600155,
     "groundName": "Chigwell Construction Stadium",
@@ -533,7 +533,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "LON-EN-CO-4GUE",
     "club": "London City Lionesses",
     "teamName": "London City Lionesses",
     "sport": "football",
@@ -541,8 +541,8 @@ const teams = [
     "tier": "tier1",
     "division": "WSL",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.39046639,
     "lng": 0.021316266,
     "groundName": "Copperjax Community Stadium",
@@ -556,7 +556,7 @@ const teams = [
     "otherSocials": "https://www.youtube.com/@londoncitylionesses, https://www.facebook.com/LondonCityLionesses, https://www.tiktok.com/@londoncitylionesses"
   },
   {
-    "id": null,
+    "id": "BRI-EN-SH-1JAW",
     "club": "Bristol Bears",
     "teamName": "Bristol Bears Women",
     "sport": "rugby",
@@ -564,8 +564,8 @@ const teams = [
     "tier": "tier1",
     "division": "Premiership",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-SW",
+    "regionName": "South West",
     "lat": 51.4980888,
     "lng": -2.5299069,
     "groundName": "Shaftesbury Park",
@@ -579,7 +579,7 @@ const teams = [
     "otherSocials": "https://www.facebook.com/BristolBearsW"
   },
   {
-    "id": null,
+    "id": "EXE-EN-SA-NXPI",
     "club": "Exeter Chiefs",
     "teamName": "Exeter Chiefs Women",
     "sport": "rugby",
@@ -587,8 +587,8 @@ const teams = [
     "tier": "tier1",
     "division": "Premiership",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-SW",
+    "regionName": "South West",
     "lat": 50.7095567,
     "lng": -3.4683403,
     "groundName": "Sandy Park",
@@ -602,7 +602,7 @@ const teams = [
     "otherSocials": "https://www.facebook.com/ExeterChiefsWomen"
   },
   {
-    "id": null,
+    "id": "EAL-EN-EA-0XLU",
     "club": "Ealing Trailfinders",
     "teamName": "Ealing Trailfinders Women",
     "sport": "rugby",
@@ -610,8 +610,8 @@ const teams = [
     "tier": "tier1",
     "division": "Premiership",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.5247325,
     "lng": -0.3293985,
     "groundName": "Ealing Trailfinders Rugby Club",
@@ -625,7 +625,7 @@ const teams = [
     "otherSocials": "https://www.facebook.com/EalingTrailfindersWomensRugby"
   },
   {
-    "id": null,
+    "id": "GLO-EN-TH-JA58",
     "club": "Gloucester-Hartpury",
     "teamName": "Gloucester-Hartpury Women",
     "sport": "rugby",
@@ -633,8 +633,8 @@ const teams = [
     "tier": "tier1",
     "division": "Premiership",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-SW",
+    "regionName": "South West",
     "lat": 51.9037018,
     "lng": -2.3025382,
     "groundName": "The Hartpury Arena",
@@ -648,7 +648,7 @@ const teams = [
     "otherSocials": "https://www.facebook.com/gloucesterhartpury/"
   },
   {
-    "id": null,
+    "id": "GLO-EN-KI-2HM9",
     "club": "Gloucester-Hartpury",
     "teamName": "Gloucester-Hartpury Women",
     "sport": "rugby",
@@ -656,8 +656,8 @@ const teams = [
     "tier": "tier1",
     "division": "Premiership",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-SW",
+    "regionName": "South West",
     "lat": 51.8711897,
     "lng": -2.2428512,
     "groundName": "Kingsholm Stadium",
@@ -671,7 +671,7 @@ const teams = [
     "otherSocials": "https://www.facebook.com/gloucesterhartpury/"
   },
   {
-    "id": null,
+    "id": "HAR-EN-TW-BR4O",
     "club": "Harlequins",
     "teamName": "Harlequins Women",
     "sport": "rugby",
@@ -679,8 +679,8 @@ const teams = [
     "tier": "tier1",
     "division": "Premiership",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.4504131,
     "lng": -0.3441495,
     "groundName": "Twickenham Stoop",
@@ -694,7 +694,7 @@ const teams = [
     "otherSocials": "https://www.facebook.com/harlequinsladies"
   },
   {
-    "id": null,
+    "id": "HAR-EN-SU-9UI2",
     "club": "Harlequins",
     "teamName": "Harlequins Women",
     "sport": "rugby",
@@ -702,8 +702,8 @@ const teams = [
     "tier": "tier1",
     "division": "Premiership",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-SE",
+    "regionName": "South East",
     "lat": 51.2353024,
     "lng": -0.6071427,
     "groundName": "Surrey Sports Park",
@@ -717,7 +717,7 @@ const teams = [
     "otherSocials": "https://www.facebook.com/harlequinsladies"
   },
   {
-    "id": null,
+    "id": "LEI-EN-MA-XW92",
     "club": "Leicester Tigers",
     "teamName": "Leicester Tigers Women",
     "sport": "rugby",
@@ -725,8 +725,8 @@ const teams = [
     "tier": "tier1",
     "division": "Premiership",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-EM",
+    "regionName": "East Midlands",
     "lat": 52.6241667,
     "lng": -1.1330556,
     "groundName": "Mattioli Woods Welford Road Stadium",
@@ -740,7 +740,7 @@ const teams = [
     "otherSocials": "https://www.facebook.com/tigerswomens"
   },
   {
-    "id": null,
+    "id": "LOU-EN-CI-UR2D",
     "club": "Loughborough Lightning",
     "teamName": "Loughborough Lightning Women",
     "sport": "rugby",
@@ -748,8 +748,8 @@ const teams = [
     "tier": "tier1",
     "division": "Premiership",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-EM",
+    "regionName": "East Midlands",
     "lat": 52.2396946,
     "lng": -0.919472,
     "groundName": "cinch Stadium",
@@ -763,7 +763,7 @@ const teams = [
     "otherSocials": "https://www.facebook.com/LightningRugby"
   },
   {
-    "id": null,
+    "id": "SAL-EN-HE-48GT",
     "club": "Sale Sharks Women",
     "teamName": "Sale Sharks Women",
     "sport": "rugby",
@@ -771,8 +771,8 @@ const teams = [
     "tier": "tier1",
     "division": "Premiership",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.4160883,
     "lng": -2.3212665,
     "groundName": "Heywood Road",
@@ -786,7 +786,7 @@ const teams = [
     "otherSocials": "https://www.facebook.com/salesharkswomen"
   },
   {
-    "id": null,
+    "id": "SAR-EN-ST-V8G8",
     "club": "Saracens",
     "teamName": "Saracens Women",
     "sport": "rugby",
@@ -794,8 +794,8 @@ const teams = [
     "tier": "tier1",
     "division": "Premiership",
     "country": "England",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.6030216,
     "lng": -0.2235209,
     "groundName": "StoneX Stadium",
@@ -809,7 +809,7 @@ const teams = [
     "otherSocials": "https://www.facebook.com/saracenswomen"
   },
   {
-    "id": null,
+    "id": "WIG-BE--2-D6IW",
     "club": "Wigan Warriors",
     "teamName": "Wigan Warriors Women",
     "sport": "rugby",
@@ -817,8 +817,8 @@ const teams = [
     "tier": "tier1",
     "division": "Betfred Women's Super League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.547476,
     "lng": -2.6542487,
     "groundName": "Wigan Warriors RLFC",
@@ -832,7 +832,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "ST.-BE--2-BHCS",
     "club": "St. Helens",
     "teamName": "St. Helens Women",
     "sport": "rugby",
@@ -840,8 +840,8 @@ const teams = [
     "tier": "tier1",
     "division": "Betfred Women's Super League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.4474676,
     "lng": -2.7261145,
     "groundName": "Totally Wicked Stadium",
@@ -855,7 +855,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "LEE-BE--1-UWJ2",
     "club": "Leeds Rhinos",
     "teamName": "Leeds Rhinos Women",
     "sport": "rugby",
@@ -863,8 +863,8 @@ const teams = [
     "tier": "tier1",
     "division": "Betfred Women's Super League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-YH",
+    "regionName": "Yorkshire & Humber",
     "lat": 53.8163563,
     "lng": -1.5822247,
     "groundName": "AMT Headingley Rugby Stadium",
@@ -878,7 +878,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "YOR-BE--1-AIXX",
     "club": "York Valkyries",
     "teamName": "York Valkyries Women",
     "sport": "rugby",
@@ -886,8 +886,8 @@ const teams = [
     "tier": "tier1",
     "division": "Betfred Women's Super League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-YH",
+    "regionName": "Yorkshire & Humber",
     "lat": 53.984315,
     "lng": -1.0529186,
     "groundName": "LNER Community Stadium",
@@ -901,7 +901,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "WAR-BE--2-0GV4",
     "club": "Warrington Wolves",
     "teamName": "Warrington Wolves Women",
     "sport": "rugby",
@@ -909,8 +909,8 @@ const teams = [
     "tier": "tier1",
     "division": "Betfred Women's Super League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.3950019,
     "lng": -2.5955867,
     "groundName": "The Halliwell Jones Stadium",
@@ -924,7 +924,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "BAR-BE--3-9YXY",
     "club": "Barrow Raiders",
     "teamName": "Barrow Raiders Women",
     "sport": "rugby",
@@ -932,8 +932,8 @@ const teams = [
     "tier": "tier1",
     "division": "Betfred Women's Super League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 54.1149128,
     "lng": -3.2353181,
     "groundName": "Craven Park",
@@ -947,7 +947,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "HUD-BE--1-ZRIV",
     "club": "Huddersfield Giants",
     "teamName": "Huddersfield Giants Women",
     "sport": "rugby",
@@ -955,8 +955,8 @@ const teams = [
     "tier": "tier1",
     "division": "Betfred Women's Super League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-YH",
+    "regionName": "Yorkshire & Humber",
     "lat": 53.6589993,
     "lng": -1.8478935,
     "groundName": "Huddersfield Laund Hill RUFC",
@@ -970,7 +970,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "FEA-BE--1-WOOH",
     "club": "Featherstone Rovers",
     "teamName": "Featherstone Rovers Women",
     "sport": "rugby",
@@ -978,8 +978,8 @@ const teams = [
     "tier": "tier1",
     "division": "Betfred Women's Super League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-YH",
+    "regionName": "Yorkshire & Humber",
     "lat": 53.6785928,
     "lng": -1.3548137,
     "groundName": "Millenium Stadium",
@@ -993,7 +993,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "BRA-RF--1-BL64",
     "club": "Bradford Bulls",
     "teamName": "Bradford Bulls Women",
     "sport": "rugby",
@@ -1001,8 +1001,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-YH",
+    "regionName": "Yorkshire & Humber",
     "lat": 53.764949,
     "lng": -1.7571259,
     "groundName": "Bartercard Odsal Stadium",
@@ -1016,7 +1016,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "CAS-RF--1-2NL0",
     "club": "Castleford Tigers",
     "teamName": "Castleford Tigers Rugby Ground Women",
     "sport": "rugby",
@@ -1024,8 +1024,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-YH",
+    "regionName": "Yorkshire & Humber",
     "lat": 53.7296568,
     "lng": -1.3409352,
     "groundName": "The Jungle",
@@ -1039,7 +1039,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "SAL-RF--2-X539",
     "club": "Salford Red Devil",
     "teamName": "Salford Red Devil Women",
     "sport": "rugby",
@@ -1047,8 +1047,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.4696274,
     "lng": -2.3759139,
     "groundName": "Salford Community Stadium",
@@ -1062,7 +1062,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "LEI-RF--2-T9GA",
     "club": "Leigh Leopards",
     "teamName": "Leigh Leopards Women",
     "sport": "rugby",
@@ -1070,8 +1070,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.4955622,
     "lng": -2.5269004,
     "groundName": "Twist Lane",
@@ -1085,7 +1085,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "LEI-RF--2-VUBA",
     "club": "Leigh Leopards",
     "teamName": "Leigh Leopards Women",
     "sport": "rugby",
@@ -1093,8 +1093,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.489545,
     "lng": -2.5301807,
     "groundName": "Leigh Sports Village",
@@ -1108,7 +1108,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "HUL-RF--0-BSL5",
     "club": "Hull KR",
     "teamName": "Hull KR Women",
     "sport": "rugby",
@@ -1116,8 +1116,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-YH",
+    "regionName": "Yorkshire & Humber",
     "lat": 53.753953,
     "lng": -0.2648195,
     "groundName": "Sewell Group Craven Park",
@@ -1131,7 +1131,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "DEW-RF--1-XRVF",
     "club": "Dewsbury Moor",
     "teamName": "Dewsbury Moor Women",
     "sport": "rugby",
@@ -1139,8 +1139,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-YH",
+    "regionName": "Yorkshire & Humber",
     "lat": 53.6963156,
     "lng": -1.6590452,
     "groundName": "Dewsbury Moor Sports Club",
@@ -1154,7 +1154,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "STA-RF--1-MBZG",
     "club": "Stanningley",
     "teamName": "Stanningley Women",
     "sport": "rugby",
@@ -1162,8 +1162,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-YH",
+    "regionName": "Yorkshire & Humber",
     "lat": 53.8176971,
     "lng": -1.6577723,
     "groundName": "The Arthur Miller Stadium",
@@ -1177,7 +1177,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "OUL-RF--1-IDKM",
     "club": "Oulton Raidettes",
     "teamName": "Oulton Raidettes Women",
     "sport": "rugby",
@@ -1185,8 +1185,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-YH",
+    "regionName": "Yorkshire & Humber",
     "lat": 53.7426528,
     "lng": -1.4503313,
     "groundName": "Oulton & Woodlesford Sports & Social Club",
@@ -1200,7 +1200,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "SHE-RF--1-PXQV",
     "club": "Sheffield Eagles",
     "teamName": "Sheffield Eagles Women",
     "sport": "rugby",
@@ -1208,8 +1208,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-YH",
+    "regionName": "Yorkshire & Humber",
     "lat": 53.4065643,
     "lng": -1.386863,
     "groundName": "Sheffield Hallam University Sports Park",
@@ -1223,7 +1223,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "COV-RF--1-3XRO",
     "club": "Coventry Bears",
     "teamName": "Coventry Bears Women",
     "sport": "rugby",
@@ -1231,8 +1231,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-WM",
+    "regionName": "West Midlands",
     "lat": 52.4039074,
     "lng": -1.5568396,
     "groundName": "Old Coventrians Rugby Football Club",
@@ -1246,7 +1246,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "LEA-RF--1-R2RG",
     "club": "Leamington Royals",
     "teamName": "Leamington Royals Women",
     "sport": "rugby",
@@ -1254,8 +1254,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-WM",
+    "regionName": "West Midlands",
     "lat": 52.3186841,
     "lng": -1.54057,
     "groundName": "Leamington Rugby Football Club",
@@ -1269,7 +1269,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "NOT-RF--1-PV4G",
     "club": "Nottingham Outlaws",
     "teamName": "Nottingham Outlaws Women",
     "sport": "rugby",
@@ -1277,8 +1277,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-EM",
+    "regionName": "East Midlands",
     "lat": 52.9233282,
     "lng": -1.1710377,
     "groundName": "Lenton Lane",
@@ -1292,7 +1292,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "TEL-RF--2-TU42",
     "club": "Telford Raiders",
     "teamName": "Telford Raiders Women",
     "sport": "rugby",
@@ -1300,8 +1300,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-WM",
+    "regionName": "West Midlands",
     "lat": 52.6676884,
     "lng": -2.4481823,
     "groundName": "Telford Hornets Rugby Club RFC",
@@ -1315,7 +1315,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "ARM-RF--0-T059",
     "club": "Army RL",
     "teamName": "Army RL Women",
     "sport": "rugby",
@@ -1323,8 +1323,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-SE",
+    "regionName": "South East",
     "lat": 51.2631164,
     "lng": -0.7557127,
     "groundName": "The Army Athletic Association",
@@ -1338,7 +1338,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "BED-RF--0-B30S",
     "club": "Bedford Tigers",
     "teamName": "Bedford Tigers Women",
     "sport": "rugby",
@@ -1346,8 +1346,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-EE",
+    "regionName": "East of England",
     "lat": 52.1594256,
     "lng": -0.4380077,
     "groundName": "Bedford Athletic Rugby Club (",
@@ -1361,7 +1361,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "CAR-RF--3-B3SW",
     "club": "Cardiff Demons",
     "teamName": "Cardiff Demons Women",
     "sport": "rugby",
@@ -1369,8 +1369,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "WLS",
+    "regionName": "Wales",
     "lat": 51.4798026,
     "lng": -3.1845185,
     "groundName": "Cardiff Arms Park",
@@ -1384,7 +1384,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "LON-RF--0-BUBQ",
     "club": "London Broncos",
     "teamName": "London Broncos Women",
     "sport": "rugby",
@@ -1392,8 +1392,8 @@ const teams = [
     "tier": "tier2",
     "division": "RFL Women's Championship",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.4648499,
     "lng": -0.2458613,
     "groundName": "Rosslyn Park FC",
@@ -1407,7 +1407,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "BRE-LO-0.-81XN",
     "club": "Brentwood Eels",
     "teamName": "Brentwood Eels Women",
     "sport": "rugby",
@@ -1415,8 +1415,8 @@ const teams = [
     "tier": "tier3",
     "division": "Local League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-EE",
+    "regionName": "East of England",
     "lat": 51.649105,
     "lng": 0.2750967,
     "groundName": "The Old Brentwoods Club",
@@ -1430,7 +1430,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "NOR-LO--0-6E4D",
     "club": "North Herts Crusaders",
     "teamName": "North Herts Crusaders Women",
     "sport": "rugby",
@@ -1438,8 +1438,8 @@ const teams = [
     "tier": "tier3",
     "division": "Local League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-EE",
+    "regionName": "East of England",
     "lat": 51.9601232,
     "lng": -0.2815424,
     "groundName": "King George's Play Area",
@@ -1453,7 +1453,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "BED-LO--0-MO0W",
     "club": "Bedford Tigers",
     "teamName": "Bedford Tigers Development Team Women",
     "sport": "rugby",
@@ -1461,8 +1461,8 @@ const teams = [
     "tier": "tier3",
     "division": "Local League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-EE",
+    "regionName": "East of England",
     "lat": 52.1594256,
     "lng": -0.4380077,
     "groundName": "Bedford Athletic Rugby Club",
@@ -1476,7 +1476,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "ANG-LO-1.-Y1S8",
     "club": "Anglian Vipers",
     "teamName": "Anglian Vipers Women",
     "sport": "rugby",
@@ -1484,8 +1484,8 @@ const teams = [
     "tier": "tier3",
     "division": "Local League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-EE",
+    "regionName": "East of England",
     "lat": 52.5900641,
     "lng": 1.1401406,
     "groundName": "Wymondham Rugby Football Club",
@@ -1499,7 +1499,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "ELM-LO--0-J8IL",
     "club": "Elmbridge Eagles",
     "teamName": "Elmbridge Eagles Women",
     "sport": "rugby",
@@ -1507,8 +1507,8 @@ const teams = [
     "tier": "tier3",
     "division": "Local League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-SE",
+    "regionName": "South East",
     "lat": 51.382502,
     "lng": -0.3413272,
     "groundName": "Old Cranleighan Rugby Club",
@@ -1522,7 +1522,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "LON-LO--0-DESV",
     "club": "London Broncos",
     "teamName": "London Broncos Development Women",
     "sport": "rugby",
@@ -1530,8 +1530,8 @@ const teams = [
     "tier": "tier3",
     "division": "Local League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-LON",
+    "regionName": "London",
     "lat": 51.4650099,
     "lng": -0.2456406,
     "groundName": "Rosslyn Park FC",
@@ -1545,7 +1545,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "BRI-LO--0-1Y4Z",
     "club": "Brighton and Hove",
     "teamName": "Brighton and Hove Women",
     "sport": "rugby",
@@ -1553,8 +1553,8 @@ const teams = [
     "tier": "tier3",
     "division": "Local League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-SE",
+    "regionName": "South East",
     "lat": 50.8587848,
     "lng": -0.0875045,
     "groundName": "University of Brighton Falmer campus",
@@ -1568,7 +1568,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "GOL-LO--2-7U1D",
     "club": "Golden Ferns",
     "teamName": "Golden Ferns Women",
     "sport": "rugby",
@@ -1576,8 +1576,8 @@ const teams = [
     "tier": "tier3",
     "division": "Local League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-SW",
+    "regionName": "South West",
     "lat": 51.5487765,
     "lng": -2.5734694,
     "groundName": "Oaklands",
@@ -1591,7 +1591,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "BAT-LO--2-XCL5",
     "club": "Bath Bees",
     "teamName": "Bath Bees Women",
     "sport": "rugby",
@@ -1599,8 +1599,8 @@ const teams = [
     "tier": "tier3",
     "division": "Local League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-SW",
+    "regionName": "South West",
     "lat": 51.361618,
     "lng": -2.3773469,
     "groundName": "Odd Down Sports Ground",
@@ -1614,7 +1614,7 @@ const teams = [
     "otherSocials": null
   },
   {
-    "id": null,
+    "id": "THA-LO--2-BIVU",
     "club": "Thatto Heath",
     "teamName": "Thatto Heath Women",
     "sport": "rugby",
@@ -1622,8 +1622,8 @@ const teams = [
     "tier": "tier3",
     "division": "Local League",
     "country": "ENG",
-    "regionCode": null,
-    "regionName": null,
+    "regionCode": "ENG-NW",
+    "regionName": "North West",
     "lat": 53.432827,
     "lng": -2.7493143,
     "groundName": "Thatto Heath Crusaders Rugby League Club",
@@ -1637,4 +1637,3 @@ const teams = [
     "otherSocials": null
   }
 ];
-
