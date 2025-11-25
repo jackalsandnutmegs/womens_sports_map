@@ -11,8 +11,14 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-// 🔹 Add this line for future-proofing (cluster-ready layer)
-const markerLayer = L.layerGroup().addTo(map); // Later: const markerLayer = L.markerClusterGroup().addTo(map);
+// Use a cluster group instead of a plain layer group
+const markerLayer = L.markerClusterGroup({
+  // Optional options; default settings are fine to start with
+  spiderfyOnEveryZoom: false,
+  showCoverageOnHover: false,
+  maxClusterRadius: 50 // tweak if you want tighter or looser clustering
+}).addTo(map);
+
 
 // --- Icons ---
 
