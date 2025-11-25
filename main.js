@@ -76,6 +76,16 @@ teams.forEach((team) => {
     team.sport === "rugby"
       ? (team.code === "league" ? "Rugby League" : "Rugby Union")
       : "Football";
+      
+    // Build external directions links
+  const encodedDest = encodeURIComponent(`${team.lat},${team.lng}`);
+
+  const gmapsUrl =
+    `https://www.google.com/maps/dir/?api=1&destination=${encodedDest}`;
+
+  const osmUrl =
+    `https://www.openstreetmap.org/directions?to=${encodedDest}`;
+
 
   const popupHtml = `
       <div class="popup">
@@ -99,6 +109,15 @@ teams.forEach((team) => {
                </div>`
             : ""
         }
+        
+        
+        <!-- 🔹 Directions section -->
+        <div style="margin-top:0.35rem; font-size:0.85rem;">
+          <strong>Directions:</strong>
+          <a href="${gmapsUrl}" target="_blank" rel="noopener">Google Maps</a>
+          ·
+          <a href="${osmUrl}" target="_blank" rel="noopener">OpenStreetMap</a>
+        </div>
 
         ${
           team.notes
